@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('layouts.home');
 });
+
+Route::get('/users', function () {
+    $users = User::all();
+    return view('users.index', [ 
+        'users' => $users ]);
+})->name('users.index');
