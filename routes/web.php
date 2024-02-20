@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.home');
+    return view('layouts.app');
 });
 
-Route::get('/users', function () {
-    $users = User::all();
-    return view('users.index', [ 
-        'users' => $users ]);
-})->name('users.index');
+// Route::get('/users', function () {
+//     $users = User::all();
+//     return view('users.index', [ 
+//         'users' => $users ]);
+// })->name('users.index');
